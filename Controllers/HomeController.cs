@@ -16,7 +16,19 @@ namespace SortingAlgorithmsASP.Controllers
         public HomeController(ILogger<HomeController> logger) { _logger = logger; }
 
         public IActionResult Index() { return View(); }
-        public IActionResult Qsort() { return View(); }
+
+        public IActionResult Qsort(string text)
+        {
+            return View();
+        }
+        
+        public void QsortM(string text)
+        {
+            if (text != null)
+            {
+                TextModel.GetDictionarySortedByHoare(text);
+            }
+        }
         public IActionResult Bsort() { return View(); }
 
         public IActionResult Privacy() { return View(); }
