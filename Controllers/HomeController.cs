@@ -17,19 +17,19 @@ namespace SortingAlgorithmsASP.Controllers
 
         public IActionResult Index() { return View(); }
 
-        public IActionResult Qsort(string text)
+        public IActionResult Qsort(string value)
         {
+            if(value!=null)
+                TextModel.WordsByHoare=TextModel.GetDictionarySortedByHoare(value);
             return View();
         }
-        
-        public void QsortM(string text)
+
+        public IActionResult Bsort(string value)
         {
-            if (text != null)
-            {
-                TextModel.GetDictionarySortedByHoare(text);
-            }
+            if(value!=null)
+                TextModel.WordsByBubble=TextModel.GetDictionarySortedByBubble(value);
+            return View();
         }
-        public IActionResult Bsort() { return View(); }
 
         public IActionResult Privacy() { return View(); }
 

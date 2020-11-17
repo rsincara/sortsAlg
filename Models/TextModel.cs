@@ -5,9 +5,10 @@ namespace SortingAlgorithmsASP.Models
 {
     public static class TextModel
     {
-        public static Dictionary<string, int> Words = new Dictionary<string, int>();
+        public static Dictionary<string, int> WordsByHoare = new Dictionary<string, int>();
+        public static Dictionary<string, int> WordsByBubble = new Dictionary<string, int>();
 
-        public static Dictionary<string, int> GetDictionarySortedByHoare(string text) => Words =
+        public static Dictionary<string, int> GetDictionarySortedByHoare(string text) => WordsByHoare =
             text.Split(' ', '.', '?', '!', ',', ':', '(', ')', '\n', '\r')
                 .Where(x => x != "")
                 .LazyHoareSort()
@@ -15,7 +16,7 @@ namespace SortingAlgorithmsASP.Models
                 .ToDictionary(group => group.Key, group => group.Count());
 
         public static Dictionary<string, int> GetDictionarySortedByBubble(string text) =>
-            Words = text.Split(' ', '.', '?', '!', ',', ':', '(', ')', '\n', '\r')
+            WordsByBubble = text.Split(' ', '.', '?', '!', ',', ':', '(', ')', '\n', '\r')
                 .Where(x => x != "")
                 .LazyBubbleSort()
                 .GroupBy(x => x)

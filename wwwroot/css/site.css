@@ -4,6 +4,7 @@
 }
 
 body {
+  position: relative;
   overflow-x: hidden;
   background-image: url("https://www.wsof.org/wp-content/uploads/background-website-4-2014-wallpaper-background-and-wallpaper.jpg");
   background-repeat: no-repeat;
@@ -47,11 +48,18 @@ header a:hover {
 }
 
 .authors{
+ 
   font-family: Roboto, serif;
   margin-left: 20px;
   font-size: 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  right: 0;
+}
+.authors a {
+  color: black;
+  text-decoration: none;
+  display: block;
 }
 
 .authors :hover{
